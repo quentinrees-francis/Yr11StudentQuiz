@@ -1,5 +1,6 @@
 import easygui
 score = 0
+TITLE = "Maori Quiz"
 MIN_AGE = 14
 MAX_AGE = 19
 q_num = 1
@@ -15,13 +16,20 @@ questions  = [
   "Where would you commonly find a ‘manu’?"
 ]
 
-answers = [
-  
+answers = ["runga raro roto waho", 
+  "book table clock wall" , 
+  "kikorangi karaka pango whero" , 
+  "rohe whenua moutere iwi" , 
+  "long wide small big" , 
+  "kaha manaaki rawe pai" , 
+  "Alexandra Clyde Bannockburn Cromwell" , 
+"sky pre-school swimming pool classroom" , 
+
 ]
 
-easygui.msgbox("Welcome to the Maori Trivia Game!")
-name = easygui.enterbox("What is your name?")
-easygui.msgbox(f"Welcome to the Maori Trivia Game {name}")
+easygui.msgbox("Welcome to the Maori Trivia Game!" , TITLE)
+name = easygui.enterbox("What is your name?" )
+easygui.msgbox(f"Welcome to the Maori Trivia Game {name}" , TITLE)
 age = easygui.integerbox("How old are you?")
 if age < MAX_AGE and age > MIN_AGE:
   easygui.msgbox("You are in the right age range to play.")
