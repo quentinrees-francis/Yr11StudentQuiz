@@ -67,9 +67,11 @@ while True:
 
     q_num = 1
     score = 0
+    user_answers = []
     easygui.msgbox(f"Question {q_num}", TITLE)
     for i in range(len(questions)):
         user_answer = easygui.buttonbox(questions[i], TITLE, choices=answers[i])
+        user_answers.append(user_answer)
         if user_answer == correct_answers[i]:
             score += 1
             easygui.msgbox(f"Correct! Your score is {score}", TITLE)
@@ -77,6 +79,7 @@ while True:
         else:
             easygui.msgbox("Incorrect. Have another go!", TITLE)
             user_answer = easygui.buttonbox(questions[i], TITLE, choices=answers[i])
+            user_answers[i] = user_answer  # Update the previous answer with the second attempt
             if user_answer == correct_answers[i]:
                 easygui.msgbox(f"Correct! Your score is {score}", TITLE)
                 q_num += 1
@@ -84,8 +87,9 @@ while True:
                 score -= 1
                 easygui.msgbox(f"Incorrect. The correct answer was {correct_answers[i]}. You have lost 1 point. Your score is {score}", TITLE)
                 q_num += 1
-# Asks the user the questions, and checks if they got the question correct. If they do, it will add 1 to the uer's score, and move on to the next question. If they get the question wrong, it will ask them the question again, and if they get it correct, it will add 1 to the user's score, and move on to the next question. If they get the question wrong again, it will tell them the correct answer, and move on to the next question.
+# Asks the user the questions, and checks if they got the question correct. If they do, it will add 1 to the user's score, and move on to the next question. If they get the question wrong, it will ask them the question again, and if they get it correct, it will add 1 to the user's score, and move on to the next question. If they get the question wrong again, it will tell them the correct answer, and move on to the next question.
     easygui.msgbox(f"Congratulations, {name}! You have completed the quiz. Your final score is {score}.", TITLE)
+    easygui.msgbox(f"Your answers were: {user_answers}", TITLE)
     # Tells the user their final score, and congratulates them for completing the quiz.
     play_again = easygui.buttonbox(f"Would you like to play again, {name}?", TITLE, choices=["Yes", "No"])
     if play_again == "No":
