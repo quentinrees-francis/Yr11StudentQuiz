@@ -60,7 +60,7 @@ elif age == "":
     quit()
 # Welcomes the user to the quiz, asks the user for their name and age, and then checks if they are in the right age range to play. The code also checks if the user has entered a name or age, and if they have not, it will quit the quiz.
 while True:
-    easygui.msgbox("You will be asked a series of multiple choice questions. If you get a question correct, you will gain 1 point. If you get a question wrong, you will get one more chance to select the correct answer. If you fail this second chance, you will lose a point. You will have a total of 10 questions.", TITLE)
+    easygui.msgbox("You will be asked a series of multiple choice questions. If you get a question correct, you will gain 1 point. If you get a question wrong, you will get one more chance to select the correct answer. If you fail this second chance, you will lose a point. You will have a total of 8 questions.", TITLE)
     # Informs the user of the rules of the quiz, and explains how they will be scored.
     player_ready = easygui.buttonbox(f"Are you ready to begin, {name}?", TITLE, choices=["Yes", "No"])
     if player_ready == "Yes":
