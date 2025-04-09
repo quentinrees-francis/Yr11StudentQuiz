@@ -57,7 +57,7 @@ elif age < MIN_AGE:
 elif age == "":
     easygui.msgbox("You must enter an age to play.", TITLE)
     quit()
-# Welcomes the user to the quiz, asks the user for their name and age, and then checks if they are in the right age range to play.
+# Welcomes the user to the quiz, asks the user for their name and age, and then checks if they are in the right age range to play. The code also checks if the user has entered a name or age, and if they have not, it will quit the quiz.
 while True:
     easygui.msgbox("You will be asked a series of multiple choice questions. If you get a question correct, you will gain 1 point. If you get a question wrong, you will get one more chance to select the correct answer. If you fail this second chance, you will lose a point. You will have a total of 10 questions.", TITLE)
     # Informs the user of the rules of the quiz, and explains how they will be scored.
@@ -82,7 +82,7 @@ while True:
         else:
             easygui.msgbox("Incorrect. Have another go!", TITLE)
             user_answer = easygui.buttonbox(questions[i], TITLE, choices=answers[i])
-            user_answers[i] = user_answer  # Update the previous answer with the second attempt
+            user_answers[i] = user_answer  # Updates the previous answer with the second attempt
             if user_answer == correct_answers[i]:
                 score += 1
                 easygui.msgbox(f"Correct! Your score is {score}", TITLE)
@@ -93,7 +93,7 @@ while True:
                     score = 0
                 easygui.msgbox(f"Incorrect. The correct answer was {correct_answers[i]}. You have lost 1 point. Your score is {score}", TITLE)
                 q_num += 1
-# Asks the user the questions, and checks if they got the question correct. If they do, it will add 1 to the user's score, and move on to the next question. If they get the question wrong, it will ask them the question again, and if they get it correct, it will add 1 to the user's score, and move on to the next question. If they get the question wrong again, it will tell them the correct answer, and move on to the next question.
+# Asks the user the questions, and checks if they got the question correct. If they do, it will add 1 to the user's score, and move on to the next question. If they get the question wrong, it will ask them the question again, and if they get it correct, it will add 1 to the user's score, and move on to the next question. If they get the question wrong again, it will tell them the correct answer, and move on to the next question. It will also keep track of the user's answers, and display them at the end of the quiz.
     easygui.msgbox(f"Congratulations, {name}! You have completed the quiz. Your final score is {score}.", TITLE)
     easygui.msgbox(f"Your answers were: {user_answers}", TITLE)
     # Tells the user their final score, and congratulates them for completing the quiz.
