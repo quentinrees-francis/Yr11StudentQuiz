@@ -40,6 +40,9 @@ name = easygui.enterbox("What is your name?", TITLE)
 if name == "":
     easygui.msgbox("You must enter a name to play.", TITLE)
     quit()
+elif name.isdigit():
+    easygui.msgbox("You must enter a name to play.", TITLE)
+    quit()
 easygui.msgbox(f"Welcome to the Māori Trivia Game {name}. This quiz tests your understanding of Māori words", TITLE)
 age = easygui.integerbox("How old are you? This quiz is only open to 15-18 year olds, so we have to verify whether you are in the right age range to play ", TITLE)
 
